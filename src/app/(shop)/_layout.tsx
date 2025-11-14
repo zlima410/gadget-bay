@@ -12,7 +12,7 @@ function TabBarIcon(props: {
 
 const TabsLayout = () => {
   return (
-    <SafeAreaView edges={['top']} style={styles.safeArea}>
+    <SafeAreaView edges={["top"]} style={styles.safeArea}>
       <Tabs
         screenOptions={{
           tabBarActiveTintColor: "#1BC464",
@@ -28,13 +28,21 @@ const TabsLayout = () => {
         <Tabs.Screen
           name="index"
           options={{
-            title: 'shop',
+            title: "shop",
             tabBarIcon(props) {
-                return <TabBarIcon {...props} name='shopping-cart' />;
+              return <TabBarIcon {...props} name="shopping-cart" />;
             },
           }}
         />
-        <Tabs.Screen name="orders" options={{}} />
+        <Tabs.Screen
+          name="orders"
+          options={{
+            title: "Orders",
+            tabBarIcon(props) {
+              return <TabBarIcon {...props} name="book" />;
+            },
+          }}
+        />
       </Tabs>
     </SafeAreaView>
   );
